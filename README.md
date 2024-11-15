@@ -1,6 +1,7 @@
 # Texture Ripper
 
 Advanced texture extraction tool with perspective correction and real-time preview.
+made by @faizpoerwita
 
 ## Features
 
