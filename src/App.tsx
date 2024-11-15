@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import Canvas from './components/Canvas';
 import { TextureSlice } from './types';
 import { FileUpload } from './components/FileUpload';
+import { Github } from 'lucide-react';
 
 interface ExtractedTexture {
   id: string;
@@ -107,6 +108,24 @@ const App: React.FC = () => {
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Texture Ripper</h1>
           <p className="text-gray-400">Upload an image and select four points to extract a texture</p>
+          <div className="flex justify-center items-center gap-4">
+            <a 
+              href="https://github.com/faizjie9/texture-ripper" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              <Github className="w-6 h-6" />
+            </a>
+            <a 
+              href="https://github.com/faizpoerwita" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              Made by @faizpoerwita
+            </a>
+          </div>
         </div>
 
         {/* File upload area */}
@@ -157,12 +176,12 @@ const App: React.FC = () => {
         {image && (
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             <div className="lg:col-span-3">
-              <Canvas 
-                image={image} 
+              <Canvas
+                image={image}
                 onTextureExtracted={handleTextureExtracted}
               />
             </div>
-            
+
             {/* Extracted textures panel */}
             <div className="space-y-8">
               {/* Extracted textures panel */}
@@ -202,6 +221,34 @@ const App: React.FC = () => {
           </div>
         )}
       </div>
+      <footer className="fixed bottom-0 left-0 right-0 bg-gray-800 bg-opacity-50 backdrop-blur-sm">
+        <div className="container mx-auto px-4 py-2">
+          <div className="flex justify-between items-center">
+            <span className="text-sm text-gray-400">
+              2023 Texture Ripper
+            </span>
+            <div className="flex items-center gap-4">
+              <a 
+                href="https://github.com/faizjie9/texture-ripper" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2"
+              >
+                <Github className="w-4 h-4" />
+                View Source
+              </a>
+              <a 
+                href="https://github.com/faizpoerwita" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-gray-400 hover:text-white transition-colors"
+              >
+                Made with ❤️ by @faizpoerwita
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
