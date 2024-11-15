@@ -110,7 +110,7 @@ const App: React.FC = () => {
           <p className="text-gray-400">Upload an image and select four points to extract a texture</p>
           <div className="flex justify-center items-center gap-4">
             <a 
-              href="https://github.com/faizjie9/textureripper" 
+              href="https://github.com/faizpoerwita/textureripper" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
@@ -229,7 +229,7 @@ const App: React.FC = () => {
             </span>
             <div className="flex items-center gap-4">
               <a 
-                href="https://github.com/faizjie9/textureripper" 
+                href="https://github.com/faizpoerwita/textureripper" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2"
