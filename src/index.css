@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-black text-white min-h-screen overflow-hidden;
+  background: linear-gradient(to bottom right, 
+    rgb(0, 0, 0) 0%,
+    rgb(17, 17, 17) 30%,
+    rgb(10, 10, 10) 70%,
+    rgb(0, 0, 0) 100%
+  );
+}
+
+#root {
+  @apply min-h-screen;
+}
+
+/* Custom Animations */
+@keyframes subtle-glow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulse-border {
+  0%, 100% {
+    border-color: rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    border-color: rgba(59, 130, 246, 0.4);
+  }
+}
+
+.animate-subtle-glow {
+  animation: subtle-glow 4s ease-in-out infinite;
+}
+
+.animate-pulse-border {
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+@keyframes fade-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .animate-fade-slide-in {
+    animation: fade-slide-in 0.3s ease-out;
+  }
+}
+
+/* Smooth transitions for canvas interactions */
+.konvajs-content {
+  transition: transform 0.3s ease-out;
+}
+
+/* Smooth grid transitions */
+.konvajs-content line {
+  transition: opacity 0.2s ease-out;
+}
+
+/* Glass Effect */
+.glass-effect {
+  @apply backdrop-blur-md bg-black/30 border border-white/10;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+.glass-effect-hover:hover {
+  @apply bg-black/40 border-white/20;
+  box-shadow: 
+    0 8px 12px -1px rgba(0, 0, 0, 0.2),
+    0 4px 6px -1px rgba(0, 0, 0, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Neon Effects */
+.neon-blue {
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3),
+              0 0 20px rgba(59, 130, 246, 0.2),
+              0 0 30px rgba(59, 130, 246, 0.1);
+}
+
+.neon-purple {
+  box-shadow: 0 0 10px rgba(147, 51, 234, 0.3),
+              0 0 20px rgba(147, 51, 234, 0.2),
+              0 0 30px rgba(147, 51, 234, 0.1);
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-black/50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700/50 rounded-full;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600/70;
+}
+
+/* Selection styles */
+::selection {
+  @apply bg-blue-500/20 text-white;
+}
+
+/* Gradient Text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500;
+}
